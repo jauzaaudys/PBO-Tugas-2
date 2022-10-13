@@ -1,46 +1,31 @@
 ﻿using System;
-namespace Inheritance
+namespace Destructor
 {
-    // Parent class
-    class Shape
+    class Murid
     {
-       
-        public void setLebar(int w)
+        public Murid()
         {
-            lebar = w;
+            Console.WriteLine("Contoh Program Destructor");
+            Console.WriteLine("=========================");
         }
-        public void setTinggi(int h)
+        // Destructor
+        ~Murid()
         {
-            tinggi = h;
-        }
-        protected int lebar;
-        protected int tinggi;
-    }
-
-    // Child class
-    class Rectangle : Shape
-    {
-        public int getArea()
-        {
-            return (lebar * tinggi);
+            Console.WriteLine("Jauza Audy Safitri");
         }
     }
-
-    class RectangleTester
+    public class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            Rectangle Rect = new Rectangle();
+            Jalankan();
+            GC.Collect();
 
-            Rect.setLebar(8);
-            Rect.setTinggi(6);
-
-            // Print the area of the object.
-            Console.WriteLine("MENGHITUNG LUAS PERSEGI PANJANG");
-            Console.WriteLine("===============================");
-            Console.WriteLine();
-            Console.WriteLine("Total Luas Persegi Panjang: {0}", Rect.getArea());
-            Console.ReadKey();
+        }
+        public static void Jalankan()
+        {
+            // Membuat Instance Class
+            Murid murid = new Murid();
         }
     }
 }
